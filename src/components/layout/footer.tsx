@@ -4,7 +4,7 @@ import { AlioniLogo } from '@/components/logo';
 import { useState, useEffect } from 'react';
 
 export function Footer() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
@@ -16,7 +16,7 @@ export function Footer() {
         <div className="flex justify-center mb-6">
            <AlioniLogo className="h-24 text-primary" />
         </div>
-        <p className="font-body text-sm">&copy; {currentYear} Alioni. All Rights Reserved.</p>
+        {currentYear && <p className="font-body text-sm">&copy; {currentYear} Alioni. All Rights Reserved.</p>}
         <p className="text-xs mt-2 font-body tracking-wider">The Soul of Macahel</p>
       </div>
     </footer>
