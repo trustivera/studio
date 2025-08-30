@@ -2,8 +2,12 @@
 
 import { AlioniLogo } from '@/components/logo';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/context/language-context';
+import { translations } from '@/locales/translations';
 
 export function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
@@ -16,8 +20,8 @@ export function Footer() {
         <div className="flex justify-center mb-6">
            <AlioniLogo className="h-24 text-primary" />
         </div>
-        {currentYear && <p className="font-body text-sm">&copy; {currentYear} Alioni. All Rights Reserved.</p>}
-        <p className="text-xs mt-2 font-body tracking-wider">The Soul of Macahel</p>
+        {currentYear && <p className="font-body text-sm">&copy; {currentYear} {t.footer.rightsReserved}</p>}
+        <p className="text-xs mt-2 font-body tracking-wider">{t.footer.tagline}</p>
       </div>
     </footer>
   );
