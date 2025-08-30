@@ -23,7 +23,7 @@ export function Story() {
             </div>
              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl shadow-primary/10 transition-transform duration-500 hover:scale-105">
               <Image
-                src="https://images.unsplash.com/photo-1601753440794-a105b4629a99?q=80&w=1887"
+                src="https://storage.googleapis.com/studio-hosting-assets/asset_1722443460831_processed.png"
                 alt="A stunning, misty mountain landscape in the Macahel Valley, Artvin, with lush green forests."
                 fill
                 className="object-cover"
