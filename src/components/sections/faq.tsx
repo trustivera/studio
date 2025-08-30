@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -23,7 +23,7 @@ const formSchema = z.object({
 
 export function Faq() {
   const [faqs, setFaqs] = useState<GenerateSmartFAQsOutput['faqs']>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -33,28 +33,27 @@ export function Faq() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsLoading(true);
-    setFaqs([]);
-    try {
-      const result = await generateSmartFAQs(values);
-      setFaqs(result.faqs);
-      if (result.faqs.length === 0) {
-        toast({
-          title: "No FAQs Generated",
-          description: "The AI couldn't find enough specific information to generate FAQs.",
-        });
-      }
-    } catch (error) {
-      console.error("Error generating FAQs:", error);
-      toast({
-        variant: "destructive",
-        title: "An error occurred",
-        description: "Failed to generate FAQs. Please try again later.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    startTransition(async () => {
+        setFaqs([]);
+        try {
+            const result = await generateSmartFAQs(values);
+            setFaqs(result.faqs);
+            if (result.faqs.length === 0) {
+            toast({
+                title: "No FAQs Generated",
+                description: "The AI couldn't find enough specific information to generate FAQs.",
+            });
+            }
+        } catch (error) {
+            console.error("Error generating FAQs:", error);
+            toast({
+            variant: "destructive",
+            title: "An error occurred",
+            description: "Failed to generate FAQs. Please try again later.",
+            });
+        }
+    });
   }
 
   return (
@@ -73,7 +72,7 @@ export function Faq() {
         
         <ScrollAnimator delay="0.2s" className="max-w-4xl mx-auto">
           <Card className="bg-muted/30 border-border/50 shadow-lg">
-            <CardContent className="p-6 md:p-8">
+            <CardContent className="p-8">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   <FormField
@@ -93,8 +92,8 @@ export function Faq() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" disabled={isLoading} className="w-full sm:w-auto uppercase tracking-widest text-base font-semibold">
-                    {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  <Button type="submit" disabled={isPending} className="w-full sm:w-auto uppercase tracking-widest text-base font-semibold">
+                    {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     Generate
                   </Button>
                 </form>
@@ -103,9 +102,9 @@ export function Faq() {
           </Card>
         </ScrollAnimator>
 
-        {(isLoading || faqs.length > 0) && (
+        {(isPending || faqs.length > 0) && (
             <div className="mt-16 max-w-4xl mx-auto">
-                {isLoading && (
+                {isPending && (
                     <div className="space-y-4">
                         {[...Array(3)].map((_, i) => (
                             <div key={i} className="p-4 border border-border/30 rounded-lg bg-muted/20">
