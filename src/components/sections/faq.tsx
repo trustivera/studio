@@ -74,7 +74,7 @@ export function Faq() {
           <Card className="bg-muted/30 border-border/50 shadow-lg">
             <CardContent className="p-8">
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <form action={form.handleSubmit(onSubmit)} className="space-y-8">
                   <FormField
                     control={form.control}
                     name="websiteContent"
