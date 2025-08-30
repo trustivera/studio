@@ -1,5 +1,5 @@
 import { ScrollAnimator } from '@/components/scroll-animator';
-import { HoneyJar3D } from '@/components/honey-jar-3d';
+import Image from 'next/image';
 
 export function Products() {
   return (
@@ -11,12 +11,21 @@ export function Products() {
               Our Premium Selection
             </h2>
             <p className="mt-4 max-w-2xl mx-auto font-body text-lg text-foreground/80">
-              Hover and move your mouse to explore the craftsmanship of our signature honey.
+              A complex, multi-floral honey with notes of wild berries and mountain herbs.
             </p>
           </div>
         </ScrollAnimator>
         <ScrollAnimator delay="0.2s">
-            <HoneyJar3D />
+           <div className="relative aspect-[4/3] max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+              <Image
+                src="https://picsum.photos/id/292/1200/900"
+                alt="A beautiful jar of Alioni Macahel honey."
+                fill
+                className="object-cover"
+                data-ai-hint="honey jar"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+              />
+            </div>
         </ScrollAnimator>
       </div>
     </section>

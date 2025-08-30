@@ -9,7 +9,7 @@ export function Story() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105">
               <Image
-                src="https://picsum.photos/800/1000"
+                src="https://picsum.photos/id/1015/800/1000"
                 alt="A lush, green valley with misty mountains in the background, representing the pristine Macahel region."
                 fill
                 className="object-cover"
