@@ -17,14 +17,14 @@ export function Products() {
           </div>
         </ScrollAnimator>
         <ScrollAnimator delay="0.2s">
-           <div className="relative aspect-square max-w-md mx-auto rounded-lg overflow-hidden ">
+           <div className="relative aspect-square max-w-xl mx-auto rounded-lg overflow-hidden ">
               <Image
-                src="https://storage.googleapis.com/studio-hosting-assets/asset_1722420959828_processed.jpeg"
-                alt="A beautiful jar of Alioni Macahel honey against a dark, moody background."
+                src="https://storage.googleapis.com/studio-hosting-assets/asset_1722441999291_processed.png"
+                alt="A beautiful render of an Alioni Limited No. 1 honey jar with a geometric glass design and a wooden cap."
                 fill
                 className="object-contain"
                 data-ai-hint="honey jar product"
-                sizes="(max-width: 768px) 100vw, 500px"
+                sizes="(max-width: 768px) 100vw, 600px"
               />
             </div>
         </ScrollAnimator>
