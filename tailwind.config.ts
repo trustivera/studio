@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Alegreya', 'serif'],
-        headline: ['Belleza', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+        headline: ['Cormorant Garamond', 'serif'],
         code: ['monospace'],
       },
       colors: {

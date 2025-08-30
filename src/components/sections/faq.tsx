@@ -58,21 +58,21 @@ export function Faq() {
   }
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-muted/20">
+    <section id="faq" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimator>
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-4xl md:text-5xl text-primary">
-              Smart FAQs
+          <div className="text-center mb-16">
+            <h2 className="font-headline text-4xl md:text-5xl text-primary tracking-wider">
+              AI-Powered FAQs
             </h2>
-            <p className="mt-4 max-w-3xl mx-auto font-body text-lg text-foreground/80">
-              Our AI can generate a list of Frequently Asked Questions based on any content you provide. Paste your text below to see it in action. This tool intelligently extracts key information to build relevant Q&A pairs.
+            <p className="mt-4 max-w-3xl mx-auto font-body text-lg text-foreground/70">
+              Paste content from our site below—perhaps from our story—and let our AI generate instant answers to your questions, extracting key details to satisfy your curiosity.
             </p>
           </div>
         </ScrollAnimator>
         
         <ScrollAnimator delay="0.2s" className="max-w-4xl mx-auto">
-          <Card className="bg-background/50 border-border/70">
+          <Card className="bg-muted/30 border-border/50 shadow-lg">
             <CardContent className="p-6 md:p-8">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -81,11 +81,11 @@ export function Faq() {
                     name="websiteContent"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground font-headline text-lg">Website Content</FormLabel>
+                        <FormLabel className="text-foreground/80 font-headline text-lg tracking-wider">Source Content</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Paste your website content here... For example, you could paste the text from our 'Macahel Story' section above."
-                            className="min-h-[200px] font-body bg-background"
+                            placeholder="Paste content here to see how our AI generates relevant FAQs. For example, you could use the text from 'Valley of the Bees' section."
+                            className="min-h-[200px] font-body bg-background/50 border-border/50 focus:border-primary"
                             {...field}
                           />
                         </FormControl>
@@ -93,9 +93,9 @@ export function Faq() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" disabled={isLoading} className="w-full sm:w-auto">
+                  <Button type="submit" disabled={isLoading} className="w-full sm:w-auto uppercase tracking-widest text-base font-semibold">
                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                    Generate FAQs
+                    Generate
                   </Button>
                 </form>
               </Form>
@@ -108,8 +108,8 @@ export function Faq() {
                 {isLoading && (
                     <div className="space-y-4">
                         {[...Array(3)].map((_, i) => (
-                            <div key={i} className="p-4 border border-border/50 rounded-lg bg-background/50">
-                                <div className="h-6 w-3/4 bg-muted animate-pulse rounded"></div>
+                            <div key={i} className="p-4 border border-border/30 rounded-lg bg-muted/20">
+                                <div className="h-6 w-3/4 bg-muted/50 animate-pulse rounded"></div>
                             </div>
                         ))}
                     </div>
@@ -118,11 +118,11 @@ export function Faq() {
                 <ScrollAnimator>
                     <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
-                        <AccordionItem value={`item-${index}`} key={index} className="border-border/50">
-                        <AccordionTrigger className="font-headline text-lg text-left hover:no-underline text-primary/90 hover:text-primary">
+                        <AccordionItem value={`item-${index}`} key={index} className="border-b-border/30">
+                        <AccordionTrigger className="font-headline text-xl text-left hover:no-underline text-primary/90 hover:text-primary py-6">
                             {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="font-body text-base text-foreground/80 pt-2">
+                        <AccordionContent className="font-body text-base text-foreground/70 pt-2 pb-4">
                             {faq.answer}
                         </AccordionContent>
                         </AccordionItem>

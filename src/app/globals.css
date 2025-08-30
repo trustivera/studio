@@ -5,49 +5,49 @@
 
 @layer base {
   :root {
-    /* Default to dark theme as requested */
-    --background: 0 0% 4%;
-    --foreground: 38 69% 89%;
-    --card: 0 0% 4%;
-    --card-foreground: 38 69% 89%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 38 69% 89%;
-    --primary: 45 89% 48%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 45 89% 38%;
-    --secondary-foreground: 38 69% 89%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 45 89% 48%;
-    --accent-foreground: 0 0% 4%;
+    /* New dark theme with gold accents */
+    --background: 220 20% 5%; /* Very dark blue */
+    --foreground: 40 50% 95%; /* Light beige */
+    --card: 220 20% 10%;
+    --card-foreground: 40 50% 95%;
+    --popover: 220 20% 5%;
+    --popover-foreground: 40 50% 95%;
+    --primary: 45 85% 60%; /* Gold */
+    --primary-foreground: 220 20% 10%;
+    --secondary: 45 85% 50%;
+    --secondary-foreground: 220 20% 10%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 40 50% 70%;
+    --accent: 45 85% 60%;
+    --accent-foreground: 220 20% 10%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 45 89% 48%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 45 85% 60%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 38 69% 89%;
-    --card: 0 0% 4%;
-    --card-foreground: 38 69% 89%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 38 69% 89%;
-    --primary: 45 89% 48%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 45 89% 38%;
-    --secondary-foreground: 38 69% 89%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 45 89% 48%;
-    --accent-foreground: 0 0% 4%;
+    --background: 220 20% 5%; /* Very dark blue */
+    --foreground: 40 50% 95%; /* Light beige */
+    --card: 220 20% 10%;
+    --card-foreground: 40 50% 95%;
+    --popover: 220 20% 5%;
+    --popover-foreground: 40 50% 95%;
+    --primary: 45 85% 60%; /* Gold */
+    --primary-foreground: 220 20% 10%;
+    --secondary: 45 85% 50%;
+    --secondary-foreground: 220 20% 10%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 40 50% 70%;
+    --accent: 45 85% 60%;
+    --accent-foreground: 220 20% 10%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 45 89% 48%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 45 85% 60%;
   }
 }
 
