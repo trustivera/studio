@@ -22,11 +22,10 @@ export function Products() {
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-0 flex justify-center items-center pointer-events-none">
             <div className="relative w-full max-w-3xl aspect-square opacity-20 -translate-y-1/4">
                 <Image
-                    src="https://picsum.photos/800/800"
+                    src="/honey.png"
                     alt="A beautiful render of an Alioni Limited No. 1 honey jar with a geometric glass design and a wooden cap."
                     fill
                     className="object-contain"
-                    data-ai-hint="honey jar product"
                     sizes="800px"
                 />
             </div>

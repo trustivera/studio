@@ -23,11 +23,10 @@ export function Story() {
             </div>
              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl shadow-primary/10 transition-transform duration-500 hover:scale-105">
               <Image
-                src="https://picsum.photos/800/1000"
+                src="/macahel.png"
                 alt="A stunning, misty mountain landscape in the Macahel Valley, Artvin, with lush green forests."
                 fill
                 className="object-cover"
-                data-ai-hint="Macahel valley"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent"></div>
