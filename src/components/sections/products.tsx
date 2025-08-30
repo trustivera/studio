@@ -26,8 +26,8 @@ export function Products() {
           </ScrollAnimator>
         </div>
 
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-0 flex justify-center items-center pointer-events-none">
-          <div className="relative w-full max-w-3xl aspect-square opacity-20 -translate-y-1/4">
+        <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
+          <div className="relative w-full h-full max-w-3xl opacity-20">
             <Image
               src="/honey.png"
               alt={t.products.imageAlt}
